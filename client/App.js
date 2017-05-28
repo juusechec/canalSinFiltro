@@ -9,6 +9,13 @@ import IntlWrapper from './modules/Intl/IntlWrapper';
 // Import Routes
 import routes from './routes';
 
+// Bootstrap
+var $ = require('jquery');
+window.$ = $;
+window.jQuery = $;
+require('bootstrap');
+require('bootstrap/dist/css/bootstrap.css');
+
 // Base stylesheet
 require('./main.css');
 
