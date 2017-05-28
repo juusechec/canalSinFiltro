@@ -22,12 +22,10 @@ export function Footer() {
               </p>
               <RedesSociales />
             </div>
-            <div className={styles['footer-col'],
-            'col-md-4'}>
+            <div className={'col-md-4 ' + styles['footer-col']}>
               <h3></h3>
             </div>
-            <div className={styles['footer-col'],
-            'col-md-4'}>
+            <div className={'col-md-4 ' + styles['footer-col']}>
               <h3></h3>
               <p></p>
             </div>
