@@ -15,6 +15,8 @@ import Carousel from './components/Carousel/Carousel';
 import { toggleAddPost } from './AppActions';
 import { switchLanguage } from '../../modules/Intl/IntlActions';
 
+import favicon from './favicon.png';
+
 export class App extends Component {
   constructor(props) {
     super(props);
@@ -34,8 +36,8 @@ export class App extends Component {
       <div>
         <div>
           <Helmet
-            title="MERN Starter - Blog App"
-            titleTemplate="%s - Blog App"
+            title="Canal Sin Filtro"
+            titleTemplate="%s | Rafael Novoa"
             meta={[
               { charset: 'utf-8' },
               {
@@ -47,6 +49,16 @@ export class App extends Component {
                 content: 'width=device-width, initial-scale=1',
               },
             ]}
+            link={
+              [
+                {
+                  name: 'shortcut icon',
+                  rel: 'shortcut icon',
+                  href: favicon,
+                  type: 'image/png',
+                },
+              ]
+            }
           />
           <Header />
           <Carousel />
