@@ -11,6 +11,8 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Carousel from './components/Carousel/Carousel';
 
+import ListaHorizontal from './components/ListaVideos/ListaHorizontal';
+
 // Import Actions
 import { toggleAddPost } from './AppActions';
 import { switchLanguage } from '../../modules/Intl/IntlActions';
@@ -62,9 +64,8 @@ export class App extends Component {
           />
           <Header />
           <Carousel />
-          <div className={styles.container}>
-            {this.props.children}
-          </div>
+          <ListaHorizontal title="Shows" />
+          <ListaHorizontal title="Series" />
           <Footer />
         </div>
       </div>
