@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var cssnext = require('postcss-cssnext');
 var postcssFocus = require('postcss-focus');
 var postcssReporter = require('postcss-reporter');
+import serverConfig from './server/config';
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
@@ -16,7 +17,7 @@ module.exports = {
   output: {
     path: __dirname,
     filename: 'app.js',
-    publicPath: 'http://localhost:8000/'
+    publicPath: 'http://' + serverConfig.host + ':' + serverConfig.port + '/'
   },
 
   resolve: {
