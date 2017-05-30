@@ -17,6 +17,7 @@ import ListaHorizontal from './components/ListaVideos/ListaHorizontal';
 import { toggleAddPost } from './AppActions';
 import { switchLanguage } from '../../modules/Intl/IntlActions';
 
+// Import Images
 import favicon from './favicon.png';
 
 export class App extends Component {
@@ -27,6 +28,16 @@ export class App extends Component {
 
   componentDidMount() {
     this.setState({isMounted: true}); // eslint-disable-line
+    //react-loading-screen
+    const ele = document.getElementById('ipl-progress-indicator')
+    if(ele){
+      setTimeout(() => {
+        ele.classList.add('available')
+        setTimeout(() => {
+          ele.outerHTML = ''
+        }, 2000)
+      }, 1000)
+    }
   }
 
   toggleAddPostSection = () => {
