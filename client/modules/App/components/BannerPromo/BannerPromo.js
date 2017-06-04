@@ -12,7 +12,7 @@ import imgFondo from './fondo.jpg';
 export function BannerPromo(props) {
   return (
     <div className={"container-fluid " + styles['marco']} style={{ backgroundImage: `url(${imgFondo})` }}>
-      <div className="row">
+      <div className={"row " + styles.title}>
         <h1 className="text-center">Capsulas de Promoción</h1>
       </div>
       <div className="row">
