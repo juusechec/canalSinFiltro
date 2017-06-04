@@ -13,10 +13,10 @@ export function BannerSeries(props) {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col-xs-6">
+        <div className={"col-xs-6 " + styles['mi-col']}>
           <img src={"shared/images/" + listaSerie[indice]} className={styles['full-width']} alt="serie"/>
         </div>
-        <div className="col-xs-6">
+        <div className={"col-xs-6 " + styles['mi-col']}>
           <img src={"shared/images/" + listaContent[indice]} className={styles['full-width']} alt="contenido"/>
         </div>
       </div>

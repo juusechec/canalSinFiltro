@@ -1,3 +1,7 @@
 .full-width {
   width: 100%;
 }
+
+.mi-col{
+  padding: 0 !important;
+}
