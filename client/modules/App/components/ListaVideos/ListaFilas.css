@@ -1,0 +1,14 @@
+.marco{
+  max-width: 1600px;
+  margin: 10px auto 50px auto;
+}
+
+.title{
+  margin-left: 10px;
+}
+
+.item{
+  margin: 0 auto;
+  max-width: 400px;
+  color: rgb(251, 251, 251);
+}

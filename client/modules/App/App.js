@@ -10,8 +10,10 @@ import DevTools from './components/DevTools';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Carousel from './components/Carousel/Carousel';
-
 import ListaHorizontal from './components/ListaVideos/ListaHorizontal';
+import BannerSeries from './components/BannerSeries/BannerSeries';
+import BannerPromo from './components/BannerPromo/BannerPromo';
+import BannerClaro from './components/BannerPromo/BannerClaro';
 
 // Import Actions
 import { toggleAddPost } from './AppActions';
@@ -77,6 +79,12 @@ export class App extends Component {
           <Carousel />
           <ListaHorizontal title="Shows" />
           <ListaHorizontal title="Series" />
+          <BannerSeries last="1" />
+          <ListaHorizontal title="Influencias" />
+          <ListaHorizontal title="Entrevistas" />
+          <BannerSeries last="2" />
+          <BannerPromo />
+          <BannerClaro />
           <Footer />
         </div>
       </div>
