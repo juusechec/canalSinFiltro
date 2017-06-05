@@ -1,0 +1,3 @@
+[submodule "shared"]
+	path = shared
+	url = https://144.217.75.174.sslip.io:3000/desarrollo/shared.git
