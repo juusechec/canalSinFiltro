@@ -91,26 +91,6 @@ const renderFullPage = (html, initialState) => {
             <div class="first-indicator"></div>
             <div class="second-indicator"></div>
           </div>
-          <div class="insp-logo-frame">
-            <svg width="112" class="insp-logo-frame-img" height="112" xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 60.014069 60.782681">
-              <defs id="defs4275"/>
-              <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="11.2" inkscape:cx="22.126405" inkscape:cy="23.998865" inkscape:document-units="px" inkscape:current-layer="layer1"
-                showgrid="false" fit-margin-top="0" fit-margin-left="0" fit-margin-right="0" fit-margin-bottom="0" inkscape:window-width="1920" inkscape:window-height="1010" inkscape:window-x="0" inkscape:window-y="33" inkscape:window-maximized="1"/>
-              <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(473.57846,-246.47086)">
-                <path
-                  style="fill:#f49a00;fill-opacity:0.88235294;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:2, 1;stroke-dashoffset:0;stroke-opacity:1"
-                  d="m -440.48431,246.47086 c -5.28998,0.008 -10.27182,2.51193 -13.46484,6.76758 0.99008,-0.14019 1.98836,-0.21457 2.98828,-0.22265 12.4052,0.005 22.49122,10.0016 22.60742,22.40625 3.06558,-3.18124 4.78324,-7.44178 4.78906,-11.87891 -1.2e-4,-9.42874 -7.57537,-17.07219 -16.91992,-17.07227 z"
-                  id="path4165"
-                  inkscape:connector-curvature="0"
-                  sodipodi:nodetypes="cccccc"/>
-                <path
-                  style="fill:#f42500;fill-opacity:0.88235294;stroke:none;stroke-width:0.97562164;stroke-miterlimit:4;stroke-dasharray:1.95124325, 0.97562163;stroke-dashoffset:0;stroke-opacity:1"
-                  d="m -450.96078,253.01637 a 22.618118,22.618118 0 0 0 -22.61768,22.61949 22.618118,22.618118 0 0 0 22.61768,22.61768 22.618118,22.618118 0 0 0 22.61769,-22.61768 22.618118,22.618118 0 0 0 -22.61769,-22.61949 z m 0,9.04888 a 13.570871,13.570871 0 0 1 13.57061,13.57061 13.570871,13.570871 0 0 1 -13.57061,13.5706 13.570871,13.570871 0 0 1 -13.5706,-13.5706 13.570871,13.570871 0 0 1 13.5706,-13.57061 z"
-                  id="path4147-6"
-                  inkscape:connector-curvature="0"/>
-              </g>
-            </svg>
-          </div>
         </div>
         <div id="root">${html}</div>
         <script>

@@ -27,7 +27,15 @@ export default (
     <IndexRoute
       getComponent={(nextState, cb) => {
         require.ensure([], require => {
-          cb(null, require('./modules/Post/pages/PostListPage/PostListPage').default);
+          cb(null, require('./modules/App/pages/Index/Index').default);
+        });
+      }}
+    />
+    <Route
+      path="/ingresar"
+      getComponent={(nextState, cb) => {
+        require.ensure([], require => {
+          cb(null, require('./modules/App/pages/Other/Index').default);
         });
       }}
     />
@@ -35,7 +43,7 @@ export default (
       path="/posts/:slug-:cuid"
       getComponent={(nextState, cb) => {
         require.ensure([], require => {
-          cb(null, require('./modules/Post/pages/PostDetailPage/PostDetailPage').default);
+          cb(null, require('./modules/App/pages/Index/Index').default);
         });
       }}
     />

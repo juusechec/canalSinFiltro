@@ -20,7 +20,7 @@ export function Header(props, context) {
             Menu
             <i className="fa fa-bars"></i>
           </button>
-          <a className={styles['navbar-brand']} href="#page-top"><img src={imgLogo} alt="Logo Canal Sin Límite"/></a>
+          <a className={styles['navbar-brand']} href="/"><img src={imgLogo} alt="Logo Canal Sin Límite"/></a>
         </div>
         <div>
         <Search />
@@ -32,10 +32,10 @@ export function Header(props, context) {
               <a href="#page-top"></a>
             </li>
             <li className="page-scroll">
-              <a href="#ingresar">Iniciar Sesión</a>
+              <a href="/ingresar">Iniciar Sesión</a>
             </li>
             <li className={"page-scroll " + styles['boton-oscuro']}>
-              <a href="#registro">Registro</a>
+              <a href="/registro">Registro</a>
             </li>
           </ul>
         </div>
