@@ -3,6 +3,8 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 import App from './modules/App/App';
 
+import About from './modules/App/About'
+
 // require.ensure polyfill for node
 if (typeof require.ensure !== 'function') {
   require.ensure = function requireModule(deps, callback) {
@@ -31,6 +33,7 @@ export default (
         });
       }}
     />
+    <Route path="/about" component={About}/>
     <Route
       path="/ingresar"
       getComponent={(nextState, cb) => {
