@@ -1,6 +1,7 @@
 import React from 'react';
 
 // Import Components
+import NavLink from '../NavLink'
 import Search from '../Search/Search';
 
 // Import Style
@@ -20,7 +21,9 @@ export function Header(props, context) {
             Menu
             <i className="fa fa-bars"></i>
           </button>
-          <a className={styles['navbar-brand']} href="/"><img src={imgLogo} alt="Logo Canal Sin Límite"/></a>
+          <NavLink className={styles['navbar-brand']} to="/" onlyActiveOnIndex>
+            <img src={imgLogo} alt="Logo Canal Sin Límite"/>
+          </NavLink>
         </div>
         <div>
         <Search />
@@ -32,10 +35,10 @@ export function Header(props, context) {
               <a href="#page-top"></a>
             </li>
             <li className="page-scroll">
-              <a href="/ingresar">Iniciar Sesión</a>
+              <NavLink to="/ingresar">Iniciar Sesión</NavLink>
             </li>
             <li className={"page-scroll " + styles['boton-oscuro']}>
-              <a href="/registro">Registro</a>
+              <NavLink to="/registro">Registro</NavLink>
             </li>
           </ul>
         </div>
