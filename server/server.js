@@ -91,6 +91,34 @@ const renderFullPage = (html, initialState) => {
             <div class="first-indicator"></div>
             <div class="second-indicator"></div>
           </div>
+          <div class="insp-logo-frame">
+            <svg width="112" class="insp-logo-frame-img" height="112" xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 60.014069 60.782681">
+            <defs id="defs4275" />
+            <metadata
+               id="metadata4278">
+              <rdf:RDF>
+                <cc:Work
+                   rdf:about="">
+                  <dc:format>image/svg+xml</dc:format>
+                  <dc:type
+                     rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                  <dc:title></dc:title>
+                </cc:Work>
+              </rdf:RDF>
+            </metadata>
+            <g transform="translate(473.57846,-246.47086)" id="layer1">
+              <path
+                 id="path4147-6"
+                 d="m -450.96078,253.01637 a 22.618118,22.618118 0 0 0 -22.61768,22.61949 22.618118,22.618118 0 0 0 22.61768,22.61768 22.618118,22.618118 0 0 0 22.61769,-22.61768 22.618118,22.618118 0 0 0 -22.61769,-22.61949 z m 0,9.04888 a 13.570871,13.570871 0 0 1 13.57061,13.57061 13.570871,13.570871 0 0 1 -13.57061,13.5706 13.570871,13.570871 0 0 1 -13.5706,-13.5706 13.570871,13.570871 0 0 1 13.5706,-13.57061 z"
+                 style="fill:#f42500;fill-opacity:0.88235294;stroke:none;stroke-width:0.97562164;stroke-miterlimit:4;stroke-dasharray:1.95124325, 0.97562163;stroke-dashoffset:0;stroke-opacity:1" />
+              <path
+                 id="path4165"
+                 transform="translate(-473.57846,246.47086)"
+                 d="m 33.09375,0 c -5.28998,0.008 -10.271824,2.5119284 -13.464844,6.7675781 0.02921,-0.00414 0.05867,-0.00574 0.08789,-0.00977 -2.340889,3.0002974 -3.633378,6.7148295 -3.671875,10.5527345 2.009795,-1.120161 4.271396,-1.710933 6.572266,-1.716797 7.494549,3.08e-4 13.570004,6.075763 13.570312,13.570312 -5.78e-4,1.835078 -0.373325,3.650976 -1.095703,5.337891 3.893596,-0.535627 7.481133,-2.447552 10.140625,-5.404297 -0.0024,-0.04884 -0.005,-0.09766 -0.0078,-0.146484 3.06558,-3.18124 4.783243,-7.441777 4.789063,-11.878906 C 50.013552,7.6435262 42.438299,7.9999995e-5 33.09375,0 Z m 12.130859,28.947266 c -30.149741,15.22361 -15.07487,7.611805 0,0 z"
+                 style="fill:#f49a00;fill-opacity:0.88235294;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:2, 1;stroke-dashoffset:0;stroke-opacity:1" />
+            </g>
+            </svg>
+          </div>
         </div>
         <div id="root">${html}</div>
         <script>
