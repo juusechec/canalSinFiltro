@@ -4,15 +4,15 @@ import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 
 // Import Style
-import styles from '../../components/PostListItem/PostListItem.css';
+import styles from '../../components/VideoListItem/VideoListItem.css';
 
 // Import Actions
-import { fetchPost } from '../../PostActions';
+import { fetchVideo } from '../../VideoActions';
 
 // Import Selectors
-import { getPost } from '../../PostReducer';
+import { getVideo } from '../../VideoReducer';
 
-export function PostDetailPage(props) {
+export function VideoDetailPage(props) {
   return (
     <div>
       <Helmet title={props.post.title} />
@@ -26,18 +26,18 @@ export function PostDetailPage(props) {
 }
 
 // Actions required to provide data for this component to render in sever side.
-PostDetailPage.need = [params => {
-  return fetchPost(params.cuid);
+VideoDetailPage.need = [params => {
+  return fetchVideo(params.cuid);
 }];
 
 // Retrieve data from store as props
 function mapStateToProps(state, props) {
   return {
-    post: getPost(state, props.params.cuid),
+    post: getVideo(state, props.params.cuid),
   };
 }
 
-PostDetailPage.propTypes = {
+VideoDetailPage.propTypes = {
   post: PropTypes.shape({
     name: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
@@ -47,4 +47,4 @@ PostDetailPage.propTypes = {
   }).isRequired,
 };
 
-export default connect(mapStateToProps)(PostDetailPage);
+export default connect(mapStateToProps)(VideoDetailPage);

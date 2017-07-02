@@ -6,14 +6,14 @@ export const ADD_POSTS = 'ADD_POSTS';
 export const DELETE_POST = 'DELETE_POST';
 
 // Export Actions
-export function addPost(post) {
+export function addVideo(video) {
   return {
     type: ADD_POST,
-    post,
+    video,
   };
 }
 
-export function addPostRequest(post) {
+export function addVideoRequest(post) {
   return (dispatch) => {
     return callApi('posts', 'post', {
       post: {
@@ -21,40 +21,41 @@ export function addPostRequest(post) {
         title: post.title,
         content: post.content,
       },
-    }).then(res => dispatch(addPost(res.post)));
+    }).then(res => dispatch(addVideo(res.post)));
   };
 }
 
-export function addPosts(posts) {
+export function addVideos(videos) {
+  // Debe llamarse videos o lo que corresponga.
   return {
     type: ADD_POSTS,
-    posts,
+    videos,
   };
 }
 
-export function fetchPosts() {
+export function fetchVideos() {
   return (dispatch) => {
     return callApi('posts').then(res => {
-      dispatch(addPosts(res.posts));
+      dispatch(addVideos(res.posts));
     });
   };
 }
 
-export function fetchPost(cuid) {
+export function fetchVideo(cuid) {
   return (dispatch) => {
-    return callApi(`posts/${cuid}`).then(res => dispatch(addPost(res.post)));
+    return callApi(`posts/${cuid}`).then(res => dispatch(addVideo(res.post)));
   };
 }
 
-export function deletePost(cuid) {
+export function deleteVideo(cuid) {
   return {
     type: DELETE_POST,
     cuid,
   };
 }
 
-export function deletePostRequest(cuid) {
+export function deleteVideoRequest(cuid) {
   return (dispatch) => {
-    return callApi(`posts/${cuid}`, 'delete').then(() => dispatch(deletePost(cuid)));
+    return callApi(`posts/${cuid}`, 'delete').then(() => dispatch(deleteVideo(cuid)));
   };
 }

@@ -16,8 +16,8 @@ if (typeof require.ensure !== 'function') {
  */
 if (process.env.NODE_ENV !== 'production') {
   // Require async routes only in development for react-hot-reloader to work.
-  require('./modules/Post/pages/PostListPage/PostListPage');
-  require('./modules/Post/pages/PostDetailPage/PostDetailPage');
+  require('./modules/Video/pages/VideoListPage/VideoListPage');
+  require('./modules/Video/pages/VideoDetailPage/VideoDetailPage');
 }
 
 // react-router setup with code-splitting
@@ -40,10 +40,18 @@ export default (
       }}
     />
     <Route
-      path="/posts/:slug-:cuid"
+      path="/videos"
       getComponent={(nextState, cb) => {
         require.ensure([], require => {
-          cb(null, require('./modules/App/pages/Index/Index').default);
+          cb(null, require('./modules/Video/pages/VideoListPage/VideoListPage').default);
+        });
+      }}
+    />
+    <Route
+      path="/videos/:slug-:cuid"
+      getComponent={(nextState, cb) => {
+        require.ensure([], require => {
+          cb(null, require('./modules/Video/pages/VideoDetailPage/VideoDetailPage').default);
         });
       }}
     />
