@@ -5,13 +5,6 @@ export default {
     switchLanguage: 'Cambiar Idioma',
     twitterMessage: 'Estamos en Twitter',
     by: 'Por',
-    addVideo: 'Agregar Video',
-    deleteVideo: 'Eliminar Video',
-    createNewVideo: 'Crear Nuevo Video',
-    authorName: 'Author\'s Name',
-    postTitle: 'Video Title',
-    postContent: 'Video Content',
-    submit: 'Submit',
     comment: `user {name} {value, plural,
     	  =0 {does not have any comments}
     	  =1 {has # comment}
@@ -27,5 +20,12 @@ export default {
     	  =1 {has # comment}
     	  other {has # comments}
     	} as of {date}`,
+    addVideo: 'Agregar Vídeo',
+    deleteVideo: 'Eliminar Vídeo',
+    createNewVideo: 'Crear Nuevo Vídeo',
+    authorName: 'Nombre de Autor',
+    postTitle: 'Título del Vídeo',
+    postContent: 'Contenido del Vídeo',
+    submit: 'Enviar',
   },
 };

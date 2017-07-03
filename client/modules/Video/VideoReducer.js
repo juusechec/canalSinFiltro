@@ -33,14 +33,12 @@ const VideoReducer = (state = initialState, action) => {
 // Get all videos
 //export const getVideos = state => state.videos.data;
 export const getVideos = function(state) {
-  console.log('reducer getVideos', state);
   return state.videos.data;
 };
 
 // Get video by cuid
 //export const getVideo = (state, cuid) => state.videos.data.filter(video => video.cuid === cuid)[0];
 export const getVideo = function (state, cuid) {
-  console.log('reducer getVideo', state);
   return state.videos.data.filter(video => video.cuid === cuid)[0];
 }
 
