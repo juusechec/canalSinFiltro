@@ -6,11 +6,13 @@ import styles from './VideoEditWidget.css';
 
 export class VideoCreateWidget extends Component {
   saveVideo = () => {
+    console.log('VideoCreateWidget saveVideo', this.props, this.props.video.cuid);
+    const cuidRef = this.props.video.cuid;
     const nameRef = this.refs.name;
     const titleRef = this.refs.title;
     const contentRef = this.refs.content;
     if (nameRef.value && titleRef.value && contentRef.value) {
-      const video = this.props.saveVideo(nameRef.value, titleRef.value, contentRef.value);
+      const video = this.props.saveVideo(cuidRef, nameRef.value, titleRef.value, contentRef.value);
       // nameRef.value = video.name;
       // titleRef.value = video.title;
       // contentRef.value = video.content;

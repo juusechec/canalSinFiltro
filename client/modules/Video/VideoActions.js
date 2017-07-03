@@ -61,3 +61,24 @@ export function deleteVideoRequest(cuid) {
     return callApi(`posts/${cuid}`, 'delete').then(() => dispatch(deleteVideo(cuid)));
   };
 }
+
+export function editVideo(video) {
+  return {
+    type: EDIT_VIDEO,
+    video,
+  };
+}
+
+export function editVideoRequest(video) {
+  console.log('actions editVideoRequest', video);
+  return (dispatch) => {
+    return callApi('posts', 'put', {
+      post: {
+        cuid: video.cuid,
+        name: video.name,
+        title: video.title,
+        content: video.content,
+      },
+    }).then(res => dispatch(editVideo(res.post)));
+  };
+}

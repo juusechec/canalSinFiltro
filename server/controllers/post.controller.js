@@ -14,7 +14,7 @@ export function getPosts(req, res) {
     if (err) {
       res.status(500).send(err);
     }
-    res.json({ posts });
+    res.json({posts});
   });
 }
 
@@ -36,13 +36,13 @@ export function addPost(req, res) {
   newPost.name = sanitizeHtml(newPost.name);
   newPost.content = sanitizeHtml(newPost.content);
 
-  newPost.slug = slug(newPost.title.toLowerCase(), { lowercase: true });
+  newPost.slug = slug(newPost.title.toLowerCase(), {lowercase: true});
   newPost.cuid = cuid();
   newPost.save((err, saved) => {
     if (err) {
       res.status(500).send(err);
     }
-    res.json({ post: saved });
+    res.json({post: saved});
   });
 }
 
@@ -53,11 +53,11 @@ export function addPost(req, res) {
  * @returns void
  */
 export function getPost(req, res) {
-  Post.findOne({ cuid: req.params.cuid }).exec((err, post) => {
+  Post.findOne({cuid: req.params.cuid}).exec((err, post) => {
     if (err) {
       res.status(500).send(err);
     }
-    res.json({ post });
+    res.json({post});
   });
 }
 
@@ -68,12 +68,46 @@ export function getPost(req, res) {
  * @returns void
  */
 export function deletePost(req, res) {
-  Post.findOne({ cuid: req.params.cuid }).exec((err, post) => {
+  Post.findOne({cuid: req.params.cuid}).exec((err, post) => {
     if (err) {
       res.status(500).send(err);
     }
 
     post.remove(() => {
+      res.status(200).end();
+    });
+  });
+}
+
+/**
+ * Update a post
+ * @param req
+ * @param res
+ * @returns void
+ */
+export function updatePost(req, res) {
+  if (!req.body.post.name || !req.body.post.title || !req.body.post.content) {
+    res.status(403).end();
+  }
+
+  const oldPost = {};
+
+  // Let's sanitize inputs
+  oldPost.cuid = sanitizeHtml(req.body.post.cuid);
+  oldPost.title = sanitizeHtml(req.body.post.title);
+  oldPost.name = sanitizeHtml(req.body.post.name);
+  oldPost.content = sanitizeHtml(req.body.post.content);
+
+  oldPost.slug = slug(req.body.post.title.toLowerCase(), {lowercase: true});
+
+  Post.findOne({cuid: oldPost.cuid}).exec((err, getPost) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    Post.findByIdAndUpdate(getPost._id, oldPost).exec((err, post) => {
+      if (err) {
+        res.status(500).send(err);
+      }
       res.status(200).end();
     });
   });

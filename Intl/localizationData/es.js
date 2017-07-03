@@ -23,6 +23,7 @@ export default {
     addVideo: 'Agregar Vídeo',
     deleteVideo: 'Eliminar Vídeo',
     createNewVideo: 'Crear Nuevo Vídeo',
+    editVideo: 'Editar Vídeo',
     authorName: 'Nombre de Autor',
     postTitle: 'Título del Vídeo',
     postContent: 'Contenido del Vídeo',

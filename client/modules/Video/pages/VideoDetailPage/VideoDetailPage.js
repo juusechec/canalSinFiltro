@@ -10,7 +10,7 @@ import styles from '../../components/VideoListItem/VideoListItem.css';
 import VideoEditWidget from '../../components/VideoEditWidget/VideoEditWidget';
 
 // Import Actions
-import { fetchVideo } from '../../VideoActions';
+import { fetchVideo, editVideoRequest } from '../../VideoActions';
 import { toggleAddVideo } from '../../../App/AppActions';
 
 // Import Selectors
@@ -19,10 +19,10 @@ import { getShowAddVideo } from '../../../App/AppReducer';
 
 class VideoDetailPage extends Component {
 
-  handleSaveVideo = (name, title, content) => {
-    console.log('VideoListPage handleAddVideo');
+  handleSaveVideo = (cuid, name, title, content) => {
+    console.log('VideoDetailPage handleSaveVideo', { cuid, name, title, content });
     // this.props.dispatch(toggleAddVideo());
-    // this.props.dispatch(addVideoRequest({ name, title, content }));
+    this.props.dispatch(editVideoRequest({ cuid, name, title, content }));
   };
 
   handleToggleAddVideo = () => {
