@@ -1,16 +1,16 @@
 // Import Actions
-import { TOGGLE_ADD_POST } from './AppActions';
+import { TOGGLE_ADD_VIDEO } from './AppActions';
 
 // Initial State
 const initialState = {
-  showAddPost: false,
+  showAddVideo: false,
 };
 
 const AppReducer = (state = initialState, action) => {
   switch (action.type) {
-    case TOGGLE_ADD_POST:
+    case TOGGLE_ADD_VIDEO:
       return {
-        showAddPost: !state.showAddPost,
+        showAddVideo: !state.showAddVideo,
       };
 
     default:

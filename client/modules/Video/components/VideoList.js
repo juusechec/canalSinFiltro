@@ -4,7 +4,7 @@ import React, { PropTypes } from 'react';
 import VideoListItem from './VideoListItem/VideoListItem';
 
 function VideoList(props) {
-  console.log('props',props);
+  console.log('VideoList props',props);
   return (
     <div className="listView">
       {

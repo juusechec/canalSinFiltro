@@ -1,27 +1,29 @@
-import { ADD_POST, ADD_POSTS, DELETE_POST } from './VideoActions';
+import {ADD_POST, ADD_POSTS, DELETE_POST, TOGGLE_ADD_VIDEO} from './VideoActions';
 
 // Initial State
-const initialState = { data: [] };
+const initialState = {
+  data: [],
+  showAddVideo: false
+};
 
 const VideoReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_POST :
+    case ADD_POST:
       return {
-        data: [action.video, ...state.data],
+        data: [
+          action.video, ...state.data
+        ]
       };
 
-    case ADD_POSTS :
-      return {
-        data: action.videos,
-      };
+    case ADD_POSTS:
+      return {data: action.videos};
 
-    case DELETE_POST :
+    case DELETE_POST:
       return {
-        data: state.data.filter(video => video.cuid !== action.cuid),
+        data: state.data.filter(video => video.cuid !== action.cuid)
       };
 
     default:
-      console.log('VideoReducerState',state);
       return state;
   }
 };
@@ -30,13 +32,17 @@ const VideoReducer = (state = initialState, action) => {
 
 // Get all videos
 //export const getVideos = state => state.videos.data;
-export const getVideos = function(state){
-  console.log('VideoReducerGetVideos', state);
+export const getVideos = function(state) {
+  console.log('reducer getVideos', state);
   return state.videos.data;
 };
 
 // Get video by cuid
-export const getVideo = (state, cuid) => state.videos.data.filter(video => video.cuid === cuid)[0];
+//export const getVideo = (state, cuid) => state.videos.data.filter(video => video.cuid === cuid)[0];
+export const getVideo = function (state, cuid) {
+  console.log('reducer getVideo', state);
+  return state.videos.data.filter(video => video.cuid === cuid)[0];
+}
 
 // Export Reducer
 export default VideoReducer;

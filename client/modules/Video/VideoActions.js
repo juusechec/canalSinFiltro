@@ -4,6 +4,7 @@ import callApi from '../../util/apiCaller';
 export const ADD_POST = 'ADD_POST';
 export const ADD_POSTS = 'ADD_POSTS';
 export const DELETE_POST = 'DELETE_POST';
+export const TOGGLE_ADD_VIDEO = 'TOGGLE_ADD_VIDEO';
 
 // Export Actions
 export function addVideo(video) {
