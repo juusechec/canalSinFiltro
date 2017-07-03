@@ -108,7 +108,8 @@ export function updatePost(req, res) {
       if (err) {
         res.status(500).send(err);
       }
-      res.status(200).end();
+      //res.status(200).end();
+      res.json({post});
     });
   });
 }

@@ -30,7 +30,7 @@ class VideoListPage extends Component {
   };
 
   handleToggleAddVideo = () => {
-    console.log('VideoListPage handleToggleAddVideo');
+    //console.log('VideoListPage handleToggleAddVideo');
     this.props.dispatch(toggleAddVideo());
   };
 
@@ -49,7 +49,7 @@ VideoListPage.need = [() => { return fetchVideos(); }];
 
 // Retrieve data from store as props
 function mapStateToProps(state) {
-  console.log('VideoListPage mapStateToProps state', state);
+  //console.log('VideoListPage mapStateToProps state', state);
   return {
     videos: getVideos(state),
     showAddVideo: getShowAddVideo(state),

@@ -28,5 +28,6 @@ export default {
     postTitle: 'Título del Vídeo',
     postContent: 'Contenido del Vídeo',
     submit: 'Enviar',
+    backToVideos: 'Regresar a vídeos',
   },
 };

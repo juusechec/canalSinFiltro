@@ -24,10 +24,9 @@ const VideoReducer = (state = initialState, action) => {
       };
 
     case EDIT_VIDEO:
+      //console.log('reducer EDIT_VIDEO select last data', action, state);
       return {
-        data: [
-          action.video, ...state.data
-        ]
+        data: [action.video]
       };
 
     default:
@@ -38,14 +37,12 @@ const VideoReducer = (state = initialState, action) => {
 /* Selectors */
 
 // Get all videos
-//export const getVideos = state => state.videos.data;
-export const getVideos = function(state) {
-  return state.videos.data;
-};
+export const getVideos = state => state.videos.data;
 
 // Get video by cuid
 //export const getVideo = (state, cuid) => state.videos.data.filter(video => video.cuid === cuid)[0];
 export const getVideo = function (state, cuid) {
+  //console.log('reducer getVideo', state, cuid);
   return state.videos.data.filter(video => video.cuid === cuid)[0];
 }
 

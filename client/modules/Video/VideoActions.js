@@ -70,7 +70,7 @@ export function editVideo(video) {
 }
 
 export function editVideoRequest(video) {
-  console.log('actions editVideoRequest', video);
+  //console.log('actions editVideoRequest', video);
   return (dispatch) => {
     return callApi('posts', 'put', {
       post: {

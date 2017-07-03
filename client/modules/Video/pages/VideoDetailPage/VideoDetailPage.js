@@ -19,14 +19,16 @@ import { getShowAddVideo } from '../../../App/AppReducer';
 
 class VideoDetailPage extends Component {
 
-  handleSaveVideo = (cuid, name, title, content) => {
-    console.log('VideoDetailPage handleSaveVideo', { cuid, name, title, content });
+  handleUpdateVideo = (cuid, name, title, content) => {
+    //console.log('VideoDetailPage handleSaveVideo', { cuid, name, title, content });
     // this.props.dispatch(toggleAddVideo());
     this.props.dispatch(editVideoRequest({ cuid, name, title, content }));
+    //console.log('VideoDetailPage handleSaveVideo fetchVideo new data', cuid);
+    this.props.dispatch(fetchVideo(cuid));
   };
 
   handleToggleAddVideo = () => {
-    console.log('VideoListPage handleToggleAddVideo');
+    //console.log('VideoListPage handleToggleAddVideo');
     this.props.dispatch(toggleAddVideo());
   };
 
@@ -34,7 +36,7 @@ class VideoDetailPage extends Component {
     return (
       <div>
         <Helmet title={this.props.video.title} />
-        <VideoEditWidget video={this.props.video} saveVideo={this.handleSaveVideo} showAddVideo={this.props.showAddVideo} toggleAddVideo={this.handleToggleAddVideo} />
+        <VideoEditWidget video={this.props.video} updateVideo={this.handleUpdateVideo} showAddVideo={this.props.showAddVideo} toggleAddVideo={this.handleToggleAddVideo} />
         <div className={`${styles['single-post']} ${styles['post-detail']}`}>
           <h3 className={styles['post-title']}>{this.props.video.title}</h3>
           <p className={styles['author-name']}><FormattedMessage id="by" /> {this.props.video.name}</p>
