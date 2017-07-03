@@ -5,10 +5,11 @@ import VideoListItem from './VideoListItem/VideoListItem';
 
 function VideoList(props) {
   //console.log('VideoList props', props);
+  var videos = (typeof props.videos !== 'undefined') ? props.videos : [];
   return (
     <div className="listView">
       {
-        props.videos.map(video => (
+        videos.map(video => (
           <VideoListItem
             video={video}
             key={video.cuid}
