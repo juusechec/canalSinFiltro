@@ -1,7 +1,7 @@
-import React, { PropTypes } from 'react';
-import { connect } from 'react-redux';
+import React, {PropTypes} from 'react';
+import {connect} from 'react-redux';
 import Helmet from 'react-helmet';
-import { FormattedMessage } from 'react-intl';
+import {FormattedMessage} from 'react-intl';
 
 // Import Components
 import Header from '../../components/Header/Header';
@@ -17,16 +17,33 @@ import BannerLogin from '../../components/BannerLogin/BannerLogin';
 // Import Selectors
 // import { getPost } from '../../PostReducer';
 
-export function PostDetailPage(props) {
-  return (
-    <div>
-      {/*<Helmet title={props.post.title} />*/}
-      <Header />
-      <BannerLogin />
-      <Footer />
-    </div>
-  );
-}
+class Page extends React.Component {
+
+  componentDidMount() {
+    console.log('componentDidMount');
+  }
+
+  componentWillUnmount() {
+    console.log('componentWillUnmount');
+  }
+
+  render() {
+    console.log('Index page');
+    //unhide_mbYTP_wrapper();
+
+    return (
+      <div>
+        {/*<Helmet title={props.post.title} />*/}
+        <Header/>
+        <BannerLogin/>
+        <Footer/>
+      </div>
+    );
+  }
+
+};
+
+
 
 // // Actions required to provide data for this component to render in sever side.
 // PostDetailPage.need = [params => {
@@ -40,14 +57,14 @@ function mapStateToProps(state, props) {
   };
 }
 
-PostDetailPage.propTypes = {
-//   post: PropTypes.shape({
-//     name: PropTypes.string.isRequired,
-//     title: PropTypes.string.isRequired,
-//     content: PropTypes.string.isRequired,
-//     slug: PropTypes.string.isRequired,
-//     cuid: PropTypes.string.isRequired,
-//   }).isRequired,
+Page.propTypes = {
+  //   post: PropTypes.shape({
+  //     name: PropTypes.string.isRequired,
+  //     title: PropTypes.string.isRequired,
+  //     content: PropTypes.string.isRequired,
+  //     slug: PropTypes.string.isRequired,
+  //     cuid: PropTypes.string.isRequired,
+  //   }).isRequired,
 };
 
-export default connect(mapStateToProps)(PostDetailPage);
+export default connect(mapStateToProps)(Page);

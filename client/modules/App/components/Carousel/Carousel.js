@@ -5,8 +5,8 @@ import React from 'react';
 import styles from './Carousel.css';
 
 // Import Images
-import slide1 from './Slide1.jpg';
-import slide2 from './Slide2.jpg';
+import slide1 from './Slide2.jpg';
+import slide2 from './Slide1.jpg';
 import slide3 from './Slide3.jpg';
 
 export function Carousel() {

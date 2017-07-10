@@ -2,7 +2,6 @@ import React from 'react';
 
 // Import Components
 import NavLink from '../NavLink'
-import Search from '../Search/Search';
 
 // Import Style
 import styles from './Header.css';
@@ -18,13 +17,17 @@ export function Header(props, context) {
         <nav className={styles['navbar'] + " " + styles['navbar-default']}>
           <div className="container-fluid">
             <div className={styles['navbar-header']}>
-              <img src={imgLogo} className="img-responsive"/>
+              <NavLink className={styles['navbar-brand']} to="/" onlyActiveOnIndex>
+                <img src={imgLogo} className="img-responsive" alt="Logo Canal Sin Límite"/>
+              </NavLink>                
             </div>
             <div className={"hidden-sm hidden-md hidden-lg " + styles['menuMovil'] + " " + styles['pull-right']}>
               <img src={imgMenu}/>
             </div>
             <div className={"hidden-xs " + styles['menu'] + " " + styles['pull-right']}>
-              <a className={styles['btn-ingresos'] + " " + styles['text-upp'] + " " + styles['pull-right']} href="#">iniciar sesión</a>
+              <NavLink className={styles['btn-ingresos'] + " " + styles['text-upp'] + " " + styles['pull-right']} to="/home" onlyActiveOnIndex>
+                iniciar sesión
+              </NavLink>
             </div>
           </div>
         </nav>

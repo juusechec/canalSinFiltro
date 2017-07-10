@@ -21,7 +21,8 @@ import BannerClaro from '../../components/BannerPromo/BannerClaro';
 // Import Selectors
 // import { getPost } from '../../PostReducer';
 
-export function PostDetailPage(props) {
+export function Page(props) {
+  console.log('Home page');
   return (
     <div>
       {/*<Helmet title={props.post.title} />*/}
@@ -62,4 +63,4 @@ function mapStateToProps(state, props) {
 //   }).isRequired,
 // };
 
-export default connect(mapStateToProps)(PostDetailPage);
+export default connect(mapStateToProps)(Page);

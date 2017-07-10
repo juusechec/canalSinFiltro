@@ -32,6 +32,14 @@ export default (
       }}
     />
     <Route
+      path="/home"
+      getComponent={(nextState, cb) => {
+        require.ensure([], require => {
+          cb(null, require('./modules/App/pages/Home/Index').default);
+        });
+      }}
+    />
+    <Route
       path="/ingresar"
       getComponent={(nextState, cb) => {
         require.ensure([], require => {
