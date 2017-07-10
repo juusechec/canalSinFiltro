@@ -1,0 +1,35 @@
+.bgndVideo {
+  display: block !important;
+}
+
+.p0 {
+  padding: 0;
+}
+
+.text-upp {
+  text-transform: uppercase;
+}
+
+.content-ingresos {
+  color: #fff;
+  padding-top: 20%;
+  padding-left: 81px;
+}
+
+.text-upp {
+    text-transform: uppercase;
+}
+.btn-ingresos {
+    background: #ff4b00;
+    color: #fff !important;
+    text-decoration: none !important;
+    font-weight: 100 !important;
+    font-family: initial;
+    padding: 10px 20px 10px 20px;
+    margin-top: 28px;
+    margin-right: 45px;
+    font-size: 11px;
+}
+.pull-left {
+    float: left !important;
+}

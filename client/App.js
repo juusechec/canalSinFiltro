@@ -16,6 +16,9 @@ window.jQuery = $;
 require('bootstrap');
 require('bootstrap/dist/css/bootstrap.css');
 
+// JQuery Plugins
+//require('./util/jquery.youtubebackground');
+
 // Base stylesheet
 require('./main.css');
 

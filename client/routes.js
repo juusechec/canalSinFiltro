@@ -27,7 +27,7 @@ export default (
     <IndexRoute
       getComponent={(nextState, cb) => {
         require.ensure([], require => {
-          cb(null, require('./modules/App/pages/Index/Index').default);
+          cb(null, require('./modules/App/pages/Login/Index').default);
         });
       }}
     />

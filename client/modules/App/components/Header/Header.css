@@ -1,11 +1,60 @@
-.enlaces {
-
+header {
+    z-index: 1;
 }
 
-.boton-oscuro {
-  background-color: rgba(84, 84, 84, 0.2);
+.fullW {
+    width: 100%;
+}
+.pT10 {
+    padding-top: 10px;
+}
+.pAbs {
+    position: absolute;
+}
+.navbar-default {
+    border-color: #e7e7e7;
+    background: none;
+    border: 0px solid;
+}
+.navbar {
+    border-radius: 4px;
+}
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
 }
 
-.navbar-brand {
-  height: auto;
+.navbar-header {
+    float: left;
+    max-width: 130px;
+}
+
+.menuMovil {
+    margin-top: 4px;
+}
+
+.pull-right {
+    float: right !important;
+}
+
+.menu {
+    width: 84%;
+}
+
+.text-upp {
+    text-transform: uppercase;
+}
+
+.btn-ingresos {
+    margin-top: 3px;
+    background: #ff4b00;
+    color: #fff !important;
+    text-decoration: none !important;
+    font-weight: 100 !important;
+    font-family: initial;
+    padding: 10px 20px 10px 20px;
+    margin-right: 45px;
+    font-size: 11px;
 }

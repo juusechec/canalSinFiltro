@@ -4,42 +4,41 @@ import React from 'react';
 import styles from './Footer.css';
 
 // Import Images
-import imgSinFiltro from './sin-filtro-digital.png';
+import imgSinFiltro from './img/logoColor.png';
+import imgFacebook from './img/facebook.png';
+import imgTwitter from './img/twitter.png';
+import imgInstagram from './img/instagram.png';
 
 export function Footer() {
   return (
-    <footer className="text-center">
-      <div className={styles['footer-above']}>
-        <div className="container">
-          <div className="row">
-            <div className="footer-col col-md-4">
-              <img src={imgSinFiltro} alt="canal sin filtro"/>
-              <p className={styles['text-rules']}>
-               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-               enim ad minim veniam, quis nostrud exercitation ullamco laboris
-               nisi ut aliquip ex ea coma voluptas sit aspernatur aut odit aut.
-              </p>
-              <RedesSociales />
-            </div>
-            <div className={'col-md-4 ' + styles['footer-col']}>
-              <h3></h3>
-            </div>
-            <div className={'col-md-4 ' + styles['footer-col']}>
-              <h3></h3>
-              <p></p>
+    <footer>
+      <div className={"col-md-12 " + styles.footer}>
+        <div className={styles['main-footer']}>
+          <div className={"col-md-7 " + styles.descripFooter}>
+            <img src={imgSinFiltro} />
+            <div>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac
+              magna sit amet mauris aliquet malesuada sit amet at erat. Nunc ex
+              turpis, tincidunt eu feugiat vitae, porttitor ut dolor
             </div>
           </div>
-        </div>
-      </div>
-      <div className={styles['footer-below']}>
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              Copyright &copy; 2016 YERBABUENA FILMS TODOS LOS DERECHOS RESERVADOS
+          <div className={"col-md-3 " + styles['acercaDe-footer']}>
+            <div>
+              <a href="#">Acercas de SIN FILTRO DIGITAL</a>
+            </div>
+            <div>
+              <a href="#">Prensa y Medios</a>
+            </div>
+            <div>
+              <a href="#">Politicas de privasidad</a>
+            </div>
+            <div>
+              <a href="#">Contáctanon</a>
             </div>
           </div>
+          <RedesSociales />
         </div>
+        <div className={"col-md-12 " + styles.refer}>© SIN FILTRO DIGITAL. 2017</div>
       </div>
     </footer>
   );
@@ -48,33 +47,11 @@ export function Footer() {
 class RedesSociales extends React.Component {
   render(props) {
     return (
-      <ul className="list-inline">
-        <li>
-          <a href="#" className="btn">
-            <span className="glyphicon glyphicon-globe"></span>
-          </a>
-        </li>
-        <li>
-          <a href="#" className="btn">
-            <span className="glyphicon glyphicon-globe"></span>
-          </a>
-        </li>
-        <li>
-          <a href="#" className="btn">
-            <span className="glyphicon glyphicon-globe"></span>
-          </a>
-        </li>
-        <li>
-          <a href="#" className="btn">
-            <span className="glyphicon glyphicon-globe"></span>
-          </a>
-        </li>
-        <li>
-          <a href="#" className="btn">
-            <span className="glyphicon glyphicon-globe"></span>
-          </a>
-        </li>
-      </ul>
+      <div className={"col-md-2 " + styles.redesFooter}>
+        <a href="#" className={styles.paRi25}><img src={imgTwitter} /></a>
+        <a href="#" className={styles.paRi25}><img src={imgFacebook} /></a>
+        <a href="#"><img src={imgInstagram} /></a>
+      </div>
     );
   }
 }
