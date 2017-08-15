@@ -1,0 +1,29 @@
+.container * {
+  font-family: 'medium'
+}
+
+.container p {
+  font-family: 'light'
+}
+
+.container @font-face {
+  font-family: 'medium';
+  src: url('/medium/GOTHAM-MEDIUM.eot');
+  /* IE9 Compat Modes */
+  src: url('/medium/GOTHAM-MEDIUM.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('/medium/GOTHAM-MEDIUM.woff') format('woff'), /* Pretty Modern Browsers */
+  url('/medium/GOTHAM-MEDIUM.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('/medium/GOTHAM-MEDIUM.svg#svgFontName') format('svg');
+  /* Legacy iOS */
+}
+
+.container @font-face {
+  font-family: 'light';
+  src: url('/light/GOTHAM-LIGHT.eot');
+  /* IE9 Compat Modes */
+  src: url('/light/GOTHAM-LIGHT.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('/light/GOTHAM-LIGHT.woff') format('woff'), /* Pretty Modern Browsers */
+  url('/light/GOTHAM-LIGHT.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('/light/GOTHAM-LIGHT.svg#svgFontName') format('svg');
+  /* Legacy iOS */
+}

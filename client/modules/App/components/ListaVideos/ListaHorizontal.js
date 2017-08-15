@@ -10,12 +10,12 @@ import imgPlayIcon from './img/playIcon.png';
 import imgHeart from './img/heart.png';
 
 export function ListaHorizontal(props) {
-  const lista = ['Video 1', 'Video 2', 'Otro Vídeo'];
+  const lista = ['Cocina salvaje', 'Cocina salvaje 2', 'Cocina salvaje 3'];
   return (
     <div className={"col-xs-12 " + styles.marco}>
       <div className={styles.mainContent + " " + styles.bgfff}>
         <div className="col-xs-12 ">
-          <h4 className={styles['pull-left'] + " " + styles.pL15px}>{props.title}</h4>
+          <h4 className={styles['pull-left'] + " " + styles.pL15px + " " + styles.upper}>{props.title}</h4>
           <h5 className={styles['pull-right'] + " " + styles.pL15px}>VER TODO</h5>
         </div>
         <div className="col-xs-12">
