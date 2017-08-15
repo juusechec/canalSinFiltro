@@ -26,7 +26,7 @@ export function Header(props, context) {
               <img src={imgMenu}/>
             </div>
             <div className={"hidden-xs menu " + styles['pull-right'] + " " + styles.lista}>
-              <ul className={"nav navbar-nav " + styles['fullW']}>
+              <ul className={"nav " + styles['navbar'] + " " + styles['fullW']}>
                 <li>
                   <img src={imgMenu}/>
                 </li>
