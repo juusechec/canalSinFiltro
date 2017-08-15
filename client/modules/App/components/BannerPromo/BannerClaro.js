@@ -4,7 +4,7 @@ import React from 'react';
 import styles from './BannerClaro.css';
 
 // Import Images
-import imgFondo from './claro.png';
+import imgFondo from './img/claro.png';
 
 export function BannerClaro(props) {
   return (

@@ -5,34 +5,31 @@ import React from 'react';
 import styles from './ListaFilas.css';
 
 // Import Images
-import defaultPreview from './preview.jpg';
+import imgBackFff from './img/backFff.jpg';
+import imgPlayIcon from './img/playIcon.png';
 
 export function ListaFilas(props) {
   const lista = ['Video 1', 'Video 2', 'Otro Vídeo'];
   return (
-    <div className={"container " + styles.marco}>
-      <div className="row">
-        {lista.map((title) => <Video key={title} title={title}/>)}
-      </div>
+    <div className={styles.marco}>
+      {lista.map((title) => <Video key={title} title={title}/>)}
     </div>
   );
 }
 
 function Video(props) {
   return (
-    <div className="col-sm-6 col-md-4">
-      <div className={styles.item}>
-        <img src={defaultPreview} alt={props.title}/>
-        <div className="caption">
-          <h3>{props.title}</h3>
-          <p>
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-          quae ab illo inventore veritatis et quasi architecto beatae vitae
-          dicta sunt explicabo.
-          </p>
+    <div className={"col-xs-12 col-sm-4 " + styles.item + " " + styles['text-left']}>
+      <div className={styles.tumb}>
+        <img src={imgBackFff} alt=""/>
+        <div className={styles.over}>
+          <img src={imgPlayIcon} alt=""/>
         </div>
       </div>
+      <div className={styles.titleitem}>
+        <h5 className={styles.upper}>{props.title}</h5>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis ligula non neque finibus volutpat.</p>
     </div>
   );
 }
