@@ -1,3 +1,24 @@
 .marco {
-  margin: 70px;
+  background-color: #e8e8e8;
+}
+
+.mainContent {
+  max-width: 90%;
+  margin: auto;
+  height: auto;
+  overflow: hidden;
+  padding: 20px;
+  background: #fff;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mA {
+  margin: auto;
+}
+
+.h40px {
+  height: 40px;
 }
