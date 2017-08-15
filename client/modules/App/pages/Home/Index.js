@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 
 // Import Components
-import Header from '../../components/Header/Header';
+import HeaderUsuario from '../../components/Header/HeaderUsuario';
 import Footer from '../../components/Footer/Footer';
 import Carousel from '../../components/Carousel/Carousel';
 import ListaHorizontal from '../../components/ListaVideos/ListaHorizontal';
@@ -26,7 +26,7 @@ export function Page(props) {
   return (
     <div>
       {/*<Helmet title={props.post.title} />*/}
-      <Header />
+      <HeaderUsuario />
       <Carousel />
       <ListaHorizontal title="Shows" />
       <ListaHorizontal title="Series" />

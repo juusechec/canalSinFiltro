@@ -1,0 +1,105 @@
+header {
+  z-index: 1;
+}
+
+.fullW {
+  width: 100%;
+}
+
+.pT10 {
+  padding-top: 10px;
+}
+
+.pAbs {
+  position: absolute;
+}
+
+.navbar-default {
+  border-color: #e7e7e7;
+  background: none;
+  border: 0px solid;
+}
+
+.navbar {
+  border-radius: 4px;
+}
+
+.navbar {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
+
+.navbar-header {
+  float: left;
+  max-width: 130px;
+}
+
+.menuMovil {
+  margin-top: 4px;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.menu {
+  width: 84%;
+}
+
+.text-upp {
+  text-transform: uppercase;
+}
+
+.btn-ingresos {
+  margin-top: 3px;
+  background: #ff4b00;
+  color: #fff !important;
+  text-decoration: none !important;
+  font-weight: 100 !important;
+  font-family: initial;
+  padding: 10px 20px 10px 20px;
+  margin-right: 45px;
+  font-size: 11px;
+}
+
+.searchMenu {
+  width: 100%;
+  padding-left: 3%;
+  max-width: 310px;
+}
+
+.searchMenu input {
+  color: #fff;
+  width: 80%;
+  margin-right: 5%;
+  margin-left: 1%;
+  border: 0;
+  border-bottom: 2px solid #fff;
+  background: none;
+}
+
+.lista {
+  width: 84%;
+}
+
+.lista li {
+  float: right;
+  margin-top: 5px;
+  margin-left: 3%;
+  font-size: 16px;
+}
+
+.lista li a {
+  color: #fff !important;
+  text-transform: uppercase;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  line-height: 20px;
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  background-color: transparent;
+  text-decoration: none;
+}
