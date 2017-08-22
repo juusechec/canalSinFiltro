@@ -31,22 +31,27 @@ export function addVideo(req, res) {
     res.status(403).end();
   }
 
-  var expression = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
-  var regex = new RegExp(expression);
-
-  if (!req.body.video.url.match(regex)) {
-    //"No match"
-    res.status(403).end();
-  }
+  // console.log('Jejejej');
+  // var expression = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
+  // var regex = new RegExp(expression);
+  //
+  // if (!req.body.video.url.match(regex)) {
+  //   //"No match"
+  //   res.status(403).end();
+  // }
 
   const newVideo = new Video(req.body.video);
 
   // Let's sanitize inputs
+  newVideo.cuid = cuid();
   newVideo.titulo = sanitizeHtml(newVideo.titulo);
+  newVideo.autor = sanitizeHtml(newVideo.autor);
   newVideo.descripcion = sanitizeHtml(newVideo.descripcion);
   newVideo.url = newVideo.url;
   newVideo.idsCategorias = [];
   newVideo.categorias = [];
+
+  console.log('newVideo', newVideo);
 
   newVideo.save((err, saved) => {
     if (err) {

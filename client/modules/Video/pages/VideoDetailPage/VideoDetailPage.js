@@ -22,7 +22,7 @@ class VideoDetailPage extends Component {
   handleUpdateVideo = (cuid, titulo, autor, descripcion, url) => {
     //console.log('VideoDetailPage handleSaveVideo', { cuid, name, title, content });
     // this.props.dispatch(toggleAddVideo());
-    this.props.dispatch(editVideoRequest({ cuid, titulo, autor, descripcion, url }));
+    this.props.dispatch(editVideoRequest({ cuid, titulo, autor, url, descripcion }));
     //console.log('VideoDetailPage handleSaveVideo fetchVideo new data', cuid);
     this.props.dispatch(fetchVideo(cuid));
   };
@@ -66,7 +66,7 @@ VideoDetailPage.propTypes = {
     titulo: PropTypes.string.isRequired,
     autor: PropTypes.string.isRequired,
     descripcion: PropTypes.string.isRequired,
-    url: PropTypes.array.isRequired,
+    url: PropTypes.string.isRequired,
     idsCategorias: PropTypes.arrayOf(PropTypes.string),
     categorias: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,

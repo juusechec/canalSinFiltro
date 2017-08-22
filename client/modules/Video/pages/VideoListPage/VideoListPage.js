@@ -26,7 +26,7 @@ class VideoListPage extends Component {
 
   handleAddVideo = (titulo, autor, descripcion, url) => {
     this.props.dispatch(toggleAddVideo());
-    this.props.dispatch(addVideoRequest({ titulo, autor, descripcion, url }));
+    this.props.dispatch(addVideoRequest({ titulo, autor, url, descripcion }));
   };
 
   handleToggleAddVideo = () => {
@@ -62,7 +62,7 @@ VideoListPage.propTypes = {
     titulo: PropTypes.string.isRequired,
     autor: PropTypes.string.isRequired,
     descripcion: PropTypes.string.isRequired,
-    url: PropTypes.array.isRequired,
+    url: PropTypes.string.isRequired,
     idsCategorias: PropTypes.arrayOf(PropTypes.string),
     categorias: PropTypes.arrayOf(PropTypes.string),
   })).isRequired,

@@ -18,6 +18,8 @@ export function addVideo(video) {
 
 export function addVideoRequest(video) {
   console.log('VideoActions addVideoRequest', video);
+  video.idsCategorias = [];
+  video.categorias = [];
   return (dispatch) => {
     return callApi('videos', 'post', {
       video: {

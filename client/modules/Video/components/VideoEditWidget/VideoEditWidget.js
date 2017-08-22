@@ -52,7 +52,7 @@ VideoCreateWidget.propTypes = {
     titulo: PropTypes.string.isRequired,
     autor: PropTypes.string.isRequired,
     descripcion: PropTypes.string.isRequired,
-    url: PropTypes.array.isRequired,
+    url: PropTypes.string.isRequired,
     idsCategorias: PropTypes.arrayOf(PropTypes.string),
     categorias: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
