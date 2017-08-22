@@ -1,64 +1,73 @@
 import callApi from '../../util/apiCaller';
 
 // Export Constants
-export const ADD_POST = 'ADD_POST';
-export const ADD_POSTS = 'ADD_POSTS';
-export const DELETE_POST = 'DELETE_POST';
+export const ADD_VIDEO = 'ADD_VIDEO';
+export const ADD_VIDEOS = 'ADD_VIDEOS';
+export const DELETE_VIDEO = 'DELETE_VIDEO';
 export const EDIT_VIDEO = 'EDIT_VIDEO';
 export const TOGGLE_ADD_VIDEO = 'TOGGLE_ADD_VIDEO';
 
 // Export Actions
 export function addVideo(video) {
+  console.log('VideoActions addVideo', video);
   return {
-    type: ADD_POST,
+    type: ADD_VIDEO,
     video,
   };
 }
 
-export function addVideoRequest(post) {
+export function addVideoRequest(video) {
+  console.log('VideoActions addVideoRequest', video);
   return (dispatch) => {
-    return callApi('posts', 'post', {
-      post: {
-        name: post.name,
-        title: post.title,
-        content: post.content,
+    return callApi('videos', 'post', {
+      video: {
+        cuid: video.cuid,
+        titulo: video.titulo,
+        autor: video.autor,
+        descripcion: video.descripcion,
+        url: video.url,
+        idsCategorias: video.idsCategorias,
+        categorias: video.categorias,
       },
-    }).then(res => dispatch(addVideo(res.post)));
+    }).then(res => dispatch(addVideo(res.video)));
   };
 }
 
 export function addVideos(videos) {
+  console.log('VideoActions addVideos', videos);
   // Debe llamarse videos o lo que corresponga.
   return {
-    type: ADD_POSTS,
+    type: ADD_VIDEOS,
     videos,
   };
 }
 
 export function fetchVideos() {
+  console.log('VideoActions fetchVideos');
   return (dispatch) => {
-    return callApi('posts').then(res => {
-      dispatch(addVideos(res.posts));
+    return callApi('videos').then(res => {
+      console.log('VideoActions fetchVideos', res, res.videos);
+      dispatch(addVideos(res.videos));
     });
   };
 }
 
 export function fetchVideo(cuid) {
   return (dispatch) => {
-    return callApi(`posts/${cuid}`).then(res => dispatch(addVideo(res.post)));
+    return callApi(`videos/${cuid}`).then(res => dispatch(addVideo(res.video)));
   };
 }
 
 export function deleteVideo(cuid) {
   return {
-    type: DELETE_POST,
+    type: DELETE_VIDEO,
     cuid,
   };
 }
 
 export function deleteVideoRequest(cuid) {
   return (dispatch) => {
-    return callApi(`posts/${cuid}`, 'delete').then(() => dispatch(deleteVideo(cuid)));
+    return callApi(`videos/${cuid}`, 'delete').then(() => dispatch(deleteVideo(cuid)));
   };
 }
 
@@ -72,13 +81,16 @@ export function editVideo(video) {
 export function editVideoRequest(video) {
   //console.log('actions editVideoRequest', video);
   return (dispatch) => {
-    return callApi('posts', 'put', {
-      post: {
+    return callApi('videos', 'put', {
+      video: {
         cuid: video.cuid,
-        name: video.name,
-        title: video.title,
-        content: video.content,
+        titulo: video.titulo,
+        autor: video.autor,
+        descripcion: video.descripcion,
+        url: video.url,
+        idsCategorias: video.idsCategorias,
+        categorias: video.categorias,
       },
-    }).then(res => dispatch(editVideo(res.post)));
+    }).then(res => dispatch(editVideo(res.video)));
   };
 }

@@ -19,10 +19,10 @@ import { getShowAddVideo } from '../../../App/AppReducer';
 
 class VideoDetailPage extends Component {
 
-  handleUpdateVideo = (cuid, name, title, content) => {
+  handleUpdateVideo = (cuid, titulo, autor, descripcion, url) => {
     //console.log('VideoDetailPage handleSaveVideo', { cuid, name, title, content });
     // this.props.dispatch(toggleAddVideo());
-    this.props.dispatch(editVideoRequest({ cuid, name, title, content }));
+    this.props.dispatch(editVideoRequest({ cuid, titulo, autor, descripcion, url }));
     //console.log('VideoDetailPage handleSaveVideo fetchVideo new data', cuid);
     this.props.dispatch(fetchVideo(cuid));
   };
@@ -62,11 +62,13 @@ function mapStateToProps(state, props) {
 
 VideoDetailPage.propTypes = {
   video: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired,
-    slug: PropTypes.string.isRequired,
     cuid: PropTypes.string.isRequired,
+    titulo: PropTypes.string.isRequired,
+    autor: PropTypes.string.isRequired,
+    descripcion: PropTypes.string.isRequired,
+    url: PropTypes.array.isRequired,
+    idsCategorias: PropTypes.arrayOf(PropTypes.string),
+    categorias: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
   showAddVideo: PropTypes.bool.isRequired,
 };

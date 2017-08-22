@@ -1,4 +1,4 @@
-import {ADD_POST, ADD_POSTS, DELETE_POST, EDIT_VIDEO, TOGGLE_ADD_VIDEO} from './VideoActions';
+import {ADD_VIDEO, ADD_VIDEOS, DELETE_VIDEOS, EDIT_VIDEO, TOGGLE_ADD_VIDEO} from './VideoActions';
 
 // Initial State
 const initialState = {
@@ -8,17 +8,17 @@ const initialState = {
 
 const VideoReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_POST:
+    case ADD_VIDEO:
       return {
         data: [
           action.video, ...state.data
         ]
       };
 
-    case ADD_POSTS:
+    case ADD_VIDEOS:
       return {data: action.videos};
 
-    case DELETE_POST:
+    case DELETE_VIDEOS:
       return {
         data: state.data.filter(video => video.cuid !== action.cuid)
       };

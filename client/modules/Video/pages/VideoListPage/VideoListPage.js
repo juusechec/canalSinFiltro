@@ -18,15 +18,15 @@ class VideoListPage extends Component {
     this.props.dispatch(fetchVideos());
   }
 
-  handleDeleteVideo = post => {
-    if (confirm('Do you want to delete this post')) { // eslint-disable-line
-      this.props.dispatch(deleteVideoRequest(post));
+  handleDeleteVideo = video => {
+    if (confirm('Do you want to delete this video')) { // eslint-disable-line
+      this.props.dispatch(deleteVideoRequest(video));
     }
   };
 
-  handleAddVideo = (name, title, content) => {
+  handleAddVideo = (titulo, autor, descripcion, url) => {
     this.props.dispatch(toggleAddVideo());
-    this.props.dispatch(addVideoRequest({ name, title, content }));
+    this.props.dispatch(addVideoRequest({ titulo, autor, descripcion, url }));
   };
 
   handleToggleAddVideo = () => {
@@ -58,9 +58,13 @@ function mapStateToProps(state) {
 
 VideoListPage.propTypes = {
   videos: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired,
+    cuid: PropTypes.string.isRequired,
+    titulo: PropTypes.string.isRequired,
+    autor: PropTypes.string.isRequired,
+    descripcion: PropTypes.string.isRequired,
+    url: PropTypes.array.isRequired,
+    idsCategorias: PropTypes.arrayOf(PropTypes.string),
+    categorias: PropTypes.arrayOf(PropTypes.string),
   })).isRequired,
   showAddVideo: PropTypes.bool.isRequired,
   dispatch: PropTypes.func.isRequired,

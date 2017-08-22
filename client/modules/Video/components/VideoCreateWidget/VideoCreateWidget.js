@@ -6,12 +6,15 @@ import styles from './VideoCreateWidget.css';
 
 export class VideoCreateWidget extends Component {
   addVideo = () => {
-    const nameRef = this.refs.name;
-    const titleRef = this.refs.title;
-    const contentRef = this.refs.content;
-    if (nameRef.value && titleRef.value && contentRef.value) {
-      this.props.addVideo(nameRef.value, titleRef.value, contentRef.value);
-      nameRef.value = titleRef.value = contentRef.value = '';
+    console.log('VideoCreateWidget addVideo', this.refs);
+    const tituloRef = this.refs.titulo;
+    const autorRef = this.refs.autor;
+    const urlRef = this.refs.url;
+    const descripcionRef = this.refs.descripcion;
+    if (tituloRef.value && autorRef.value && urlRef.value && descripcionRef.value) {
+      console.log('VideoCreateWidget valid', tituloRef.value, autorRef.value, urlRef.value, descripcionRef.value);
+      this.props.addVideo(tituloRef.value, autorRef.value, urlRef.value, descripcionRef.value);
+      tituloRef.value = autorRef.value = urlRef.value = descripcionRef.value = '';
     }
   };
 
@@ -27,9 +30,10 @@ export class VideoCreateWidget extends Component {
         <div className={cls}>
           <div className={styles['form-content']}>
             <h2 className={styles['form-title']}><FormattedMessage id="createNewVideo"/></h2>
-            <input placeholder={this.props.intl.messages.authorName} className={styles['form-field']} ref="name"/>
-            <input placeholder={this.props.intl.messages.postTitle} className={styles['form-field']} ref="title"/>
-            <textarea placeholder={this.props.intl.messages.postContent} className={styles['form-field']} ref="content"/>
+            <input placeholder={this.props.intl.messages.titulo} className={styles['form-field']} ref="titulo"/>
+            <input placeholder={this.props.intl.messages.autor} className={styles['form-field']} ref="autor"/>
+            <input placeholder={this.props.intl.messages.url} className={styles['form-field']} ref="url"/>
+            <textarea placeholder={this.props.intl.messages.descripcion} className={styles['form-field']} ref="descripcion"/>
             <a className={styles['post-submit-button']} href="#" onClick={this.addVideo}><FormattedMessage id="submit"/></a>
           </div>
         </div>

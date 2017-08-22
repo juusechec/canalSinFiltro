@@ -14,7 +14,9 @@ export function getVideos(req, res) {
     if (err) {
       res.status(500).send(err);
     }
-    res.json({videos});
+    res.json({
+      videos
+    });
   });
 }
 
@@ -25,24 +27,34 @@ export function getVideos(req, res) {
  * @returns void
  */
 export function addVideo(req, res) {
-  if (!req.body.video.name || !req.body.video.title || !req.body.video.content) {
+  if (!req.body.video.titulo || !req.body.video.descripcion || !req.body.video.url) {
+    res.status(403).end();
+  }
+
+  var expression = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
+  var regex = new RegExp(expression);
+
+  if (!req.body.video.url.match(regex)) {
+    //"No match"
     res.status(403).end();
   }
 
   const newVideo = new Video(req.body.video);
 
   // Let's sanitize inputs
-  newVideo.title = sanitizeHtml(newVideo.title);
-  newVideo.name = sanitizeHtml(newVideo.name);
-  newVideo.content = sanitizeHtml(newVideo.content);
+  newVideo.titulo = sanitizeHtml(newVideo.titulo);
+  newVideo.descripcion = sanitizeHtml(newVideo.descripcion);
+  newVideo.url = newVideo.url;
+  newVideo.idsCategorias = [];
+  newVideo.categorias = [];
 
-  newVideo.slug = slug(newVideo.title.toLowerCase(), {lowercase: true});
-  newVideo.cuid = cuid();
   newVideo.save((err, saved) => {
     if (err) {
       res.status(500).send(err);
     }
-    res.json({video: saved});
+    res.json({
+      video: saved
+    });
   });
 }
 
@@ -53,11 +65,15 @@ export function addVideo(req, res) {
  * @returns void
  */
 export function getVideo(req, res) {
-  Video.findOne({cuid: req.params.cuid}).exec((err, video) => {
+  Video.findOne({
+    cuid: req.params.cuid
+  }).exec((err, video) => {
     if (err) {
       res.status(500).send(err);
     }
-    res.json({video});
+    res.json({
+      video
+    });
   });
 }
 
@@ -68,7 +84,9 @@ export function getVideo(req, res) {
  * @returns void
  */
 export function deleteVideo(req, res) {
-  Video.findOne({cuid: req.params.cuid}).exec((err, video) => {
+  Video.findOne({
+    cuid: req.params.cuid
+  }).exec((err, video) => {
     if (err) {
       res.status(500).send(err);
     }
@@ -98,18 +116,24 @@ export function updateVideo(req, res) {
   oldVideo.name = sanitizeHtml(req.body.video.name);
   oldVideo.content = sanitizeHtml(req.body.video.content);
 
-  oldVideo.slug = slug(req.body.video.title.toLowerCase(), {lowercase: true});
+  oldVideo.slug = slug(req.body.video.title.toLowerCase(), {
+    lowercase: true
+  });
 
-  Video.findOne({cuid: oldVideo.cuid}).exec((err, getVideo) => {
+  Video.findOne({
+    cuid: oldVideo.cuid
+  }).exec((err, getVideo) => {
     if (err) {
       res.status(500).send(err);
     }
-    Video.findByIdAndUpdate(getVideo._id, oldVideo).exec((err, video) => {
+    Video.findByIdAndUpdate(getVideo.cuid, oldVideo).exec((err, video) => {
       if (err) {
         res.status(500).send(err);
       }
       //res.status(200).end();
-      res.json({video});
+      res.json({
+        video
+      });
     });
   });
 }

@@ -29,5 +29,9 @@ export default {
     postContent: 'Contenido del Vídeo',
     submit: 'Enviar',
     backToVideos: 'Regresar a vídeos',
+    titulo: 'Título',
+    descripcion: 'Descripción',
+    autor: 'Autor',
+    url: 'URL',
   },
 };

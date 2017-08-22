@@ -48,11 +48,13 @@ export class VideoCreateWidget extends Component {
 
 VideoCreateWidget.propTypes = {
   video: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired,
-    slug: PropTypes.string.isRequired,
     cuid: PropTypes.string.isRequired,
+    titulo: PropTypes.string.isRequired,
+    autor: PropTypes.string.isRequired,
+    descripcion: PropTypes.string.isRequired,
+    url: PropTypes.array.isRequired,
+    idsCategorias: PropTypes.arrayOf(PropTypes.string),
+    categorias: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
   updateVideo: PropTypes.func.isRequired,
   showAddVideo: PropTypes.bool.isRequired,
