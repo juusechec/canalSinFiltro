@@ -116,14 +116,15 @@ export function updateVideo(req, res) {
   const oldVideo = {};
 
   // Let's sanitize inputs
-  oldVideo.cuid = sanitizeHtml(req.body.video.cuid);
-  oldVideo.title = sanitizeHtml(req.body.video.title);
-  oldVideo.name = sanitizeHtml(req.body.video.name);
-  oldVideo.content = sanitizeHtml(req.body.video.content);
 
-  oldVideo.slug = slug(req.body.video.title.toLowerCase(), {
-    lowercase: true
-  });
+  // Let's sanitize inputs
+  oldVideo.cuid = sanitizeHtml(req.body.video.cuid);
+  oldVideo.titulo = sanitizeHtml(req.body.video.titulo);
+  oldVideo.autor = sanitizeHtml(req.body.video.autor);
+  oldVideo.descripcion = sanitizeHtml(req.body.video.descripcion);
+  oldVideo.url = req.body.video.url;
+  oldVideo.idsCategorias = [];
+  oldVideo.categorias = [];
 
   Video.findOne({
     cuid: oldVideo.cuid

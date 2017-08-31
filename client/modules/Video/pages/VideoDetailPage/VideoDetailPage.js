@@ -19,7 +19,7 @@ import { getShowAddVideo } from '../../../App/AppReducer';
 
 class VideoDetailPage extends Component {
 
-  handleUpdateVideo = (cuid, titulo, autor, descripcion, url) => {
+  handleUpdateVideo = (cuid, titulo, autor, url, descripcion) => {
     //console.log('VideoDetailPage handleSaveVideo', { cuid, name, title, content });
     // this.props.dispatch(toggleAddVideo());
     this.props.dispatch(editVideoRequest({ cuid, titulo, autor, url, descripcion }));
@@ -38,9 +38,12 @@ class VideoDetailPage extends Component {
         <Helmet title={this.props.video.title} />
         <VideoEditWidget video={this.props.video} updateVideo={this.handleUpdateVideo} showAddVideo={this.props.showAddVideo} toggleAddVideo={this.handleToggleAddVideo} />
         <div className={`${styles['single-post']} ${styles['post-detail']}`}>
-          <h3 className={styles['post-title']}>{this.props.video.title}</h3>
-          <p className={styles['author-name']}><FormattedMessage id="by" /> {this.props.video.name}</p>
-          <p className={styles['post-desc']}>{this.props.video.content}</p>
+          <h3 className={styles['post-title']}>{this.props.video.titulo}</h3>
+          <p className={styles['author-name']}><FormattedMessage id="by" /> {this.props.video.autor}</p>
+          <p className={styles['post-desc']}>{this.props.video.descripcion}</p>
+          <p>
+            <iframe width="420" height="315" src={this.props.video.url}></iframe>
+          </p>
         </div>
       </div>
     );

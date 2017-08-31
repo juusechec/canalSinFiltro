@@ -8,16 +8,14 @@ import styles from './VideoEditWidget.css';
 export class VideoCreateWidget extends Component {
   updateVideo = () => {
     //console.log('VideoCreateWidget saveVideo', this.props, this.props.video.cuid);
-    const cuidRef = this.props.video.cuid;
-    const nameRef = this.refs.name;
-    const titleRef = this.refs.title;
-    const contentRef = this.refs.content;
-    if (nameRef.value && titleRef.value && contentRef.value) {
-      const video = this.props.updateVideo(cuidRef, nameRef.value, titleRef.value, contentRef.value);
-      // nameRef.value = video.name;
-      // titleRef.value = video.title;
-      // contentRef.value = video.content;
-      //nameRef.value = titleRef.value = contentRef.value = '';
+    const tituloRef = this.refs.titulo;
+    const autorRef = this.refs.autor;
+    const urlRef = this.refs.url;
+    const descripcionRef = this.refs.descripcion;
+    if (tituloRef.value && autorRef.value && urlRef.value && descripcionRef.value) {
+      console.log('VideoEditWidget valid', tituloRef.value, autorRef.value, urlRef.value, descripcionRef.value);
+      const video = this.props.updateVideo(this.props.video.cuid, tituloRef.value, autorRef.value, urlRef.value, descripcionRef.value);
+      //tituloRef.value = autorRef.value = urlRef.value = descripcionRef.value = '';
     }
   };
 
@@ -35,9 +33,10 @@ export class VideoCreateWidget extends Component {
         <div className={cls}>
           <div className={styles['form-content']}>
             <h2 className={styles['form-title']}><FormattedMessage id="editVideo"/></h2>
-            <input defaultValue={this.props.video.name} placeholder={this.props.intl.messages.authorName} className={styles['form-field']} ref="name"/>
-            <input defaultValue={this.props.video.title} placeholder={this.props.intl.messages.postTitle} className={styles['form-field']} ref="title"/>
-            <textarea defaultValue={this.props.video.content} placeholder={this.props.intl.messages.postContent} className={styles['form-field']} ref="content"/>
+            <input defaultValue={this.props.video.titulo} placeholder={this.props.intl.messages.titulo} className={styles['form-field']} ref="titulo"/>
+            <input defaultValue={this.props.video.autor} placeholder={this.props.intl.messages.autor} className={styles['form-field']} ref="autor"/>
+            <input defaultValue={this.props.video.url} placeholder={this.props.intl.messages.url} className={styles['form-field']} ref="url"/>
+            <textarea defaultValue={this.props.video.descripcion} placeholder={this.props.intl.messages.descripcion} className={styles['form-field']} ref="descripcion"/>
             <a className={styles['post-submit-button']} href="#" onClick={this.updateVideo}><FormattedMessage id="submit"/></a>
           </div>
         </div>

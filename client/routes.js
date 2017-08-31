@@ -56,7 +56,7 @@ export default (
       }}
     />
     <Route
-      path="/videos/:slug-:cuid"
+      path="/videos/:cuid"
       getComponent={(nextState, cb) => {
         require.ensure([], require => {
           cb(null, require('./modules/Video/pages/VideoDetailPage/VideoDetailPage').default);

@@ -26,8 +26,8 @@ export function addVideoRequest(video) {
         cuid: video.cuid,
         titulo: video.titulo,
         autor: video.autor,
-        descripcion: video.descripcion,
         url: video.url,
+        descripcion: video.descripcion,
         idsCategorias: video.idsCategorias,
         categorias: video.categorias,
       },
@@ -81,15 +81,15 @@ export function editVideo(video) {
 }
 
 export function editVideoRequest(video) {
-  //console.log('actions editVideoRequest', video);
+  console.log('VideoActions editVideoRequest', video);
   return (dispatch) => {
     return callApi('videos', 'put', {
       video: {
         cuid: video.cuid,
         titulo: video.titulo,
         autor: video.autor,
-        descripcion: video.descripcion,
         url: video.url,
+        descripcion: video.descripcion,
         idsCategorias: video.idsCategorias,
         categorias: video.categorias,
       },
