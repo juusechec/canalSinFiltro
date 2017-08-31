@@ -27,7 +27,7 @@ export function getVideos(req, res) {
  * @returns void
  */
 export function addVideo(req, res) {
-  if (!req.body.video.titulo || !req.body.video.descripcion || !req.body.video.url) {
+  if (!req.body.video.titulo || !req.body.video.autor || !req.body.video.descripcion || !req.body.video.url) {
     res.status(403).end();
   }
 
@@ -109,13 +109,11 @@ export function deleteVideo(req, res) {
  * @returns void
  */
 export function updateVideo(req, res) {
-  if (!req.body.video.name || !req.body.video.title || !req.body.video.content) {
+  if (!req.body.video.cuid || !req.body.video.titulo || !req.body.video.autor || !req.body.video.descripcion || !req.body.video.url) {
     res.status(403).end();
   }
 
   const oldVideo = {};
-
-  // Let's sanitize inputs
 
   // Let's sanitize inputs
   oldVideo.cuid = sanitizeHtml(req.body.video.cuid);
@@ -126,13 +124,16 @@ export function updateVideo(req, res) {
   oldVideo.idsCategorias = [];
   oldVideo.categorias = [];
 
+  console.log('oldVideo.cuid', oldVideo.cuid);
+
   Video.findOne({
     cuid: oldVideo.cuid
   }).exec((err, getVideo) => {
+    console.log('video.controller.js updateVideo getVideo', getVideo);
     if (err) {
       res.status(500).send(err);
     }
-    Video.findByIdAndUpdate(getVideo.cuid, oldVideo).exec((err, video) => {
+    Video.findByIdAndUpdate(getVideo._id, oldVideo).exec((err, video) => {
       if (err) {
         res.status(500).send(err);
       }

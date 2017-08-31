@@ -14,7 +14,7 @@ function VideoListItem(props) {
         </Link>
       </h3>
       <p className={styles['author-name']}><FormattedMessage id="by" /> {props.video.autor}</p>
-      <a className={styles['video-url']} href="{props.video.url}">{props.video.url}</a>
+      <a className={styles['video-url']} href={props.video.url} target="_blank">{props.video.url}</a>
       <p className={styles['video-desc']}>{props.video.descripcion}</p>
       <p className={styles['video-action']}><a href="#" onClick={props.onDelete}><FormattedMessage id="deleteVideo" /></a></p>
       <hr className={styles.divider} />

@@ -33,6 +33,18 @@ class VideoDetailPage extends Component {
   };
 
   render(){
+    function getId(url) {
+        var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+        var match = url.match(regExp);
+
+        if (match && match[2].length == 11) {
+            return match[2];
+        } else {
+            return 'error';
+        }
+    }
+    var videoId = getId(this.props.video.url);
+    var toYoutubeEmbed = '//www.youtube.com/embed/' + videoId;
     return (
       <div>
         <Helmet title={this.props.video.title} />
@@ -42,7 +54,7 @@ class VideoDetailPage extends Component {
           <p className={styles['author-name']}><FormattedMessage id="by" /> {this.props.video.autor}</p>
           <p className={styles['post-desc']}>{this.props.video.descripcion}</p>
           <p>
-            <iframe width="420" height="315" src={this.props.video.url}></iframe>
+            <iframe width="560" height="315" src={toYoutubeEmbed} frameborder="0" allowfullscreen></iframe>
           </p>
         </div>
       </div>
